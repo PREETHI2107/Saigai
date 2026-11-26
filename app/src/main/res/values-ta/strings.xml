@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">சைகை</string>
+
+    <!-- Navigation -->
+    <string name="tab_live">நேரடி பாலம்</string>
+    <string name="tab_cards">விரைவு அட்டைகள்</string>
+
+    <!-- Language toggle -->
+    <string name="language_toggle_label">வெளியீட்டு மொழி</string>
+    <string name="lang_tamil">தமிழ்</string>
+    <string name="lang_english">ஆங்கிலம்</string>
+    <string name="lang_both">இரண்டும்</string>
+
+    <!-- Live Bridge screen -->
+    <string name="captions_placeholder">அடையாளத்தைக் கேமராவுக்குக் காட்டுங்கள், அல்லது விரைவு அட்டையைத் தட்டுங்கள்.</string>
+    <string name="camera_title">கேமரா</string>
+    <string name="camera_rationale">கேமரா இந்தச் சாதனத்திலேயே இருக்கும். எந்தப் படமும் அனுப்பப்படுவதில்லை, சேமிக்கப்படுவதில்லை.</string>
+    <string name="camera_allow">கேமராவுக்கு அனுமதி அளி</string>
+    <string name="camera_denied">கேமரா அனுமதி இல்லை. விரைவு அட்டைகள் இன்னும் வேலை செய்யும்.</string>
+    <string name="camera_open_settings">அமைப்புகளைத் திற</string>
+    <string name="camera_placeholder_m1">நேரடி அடையாள அறிதல் M2-ல் வரும்.</string>
+    <string name="confidence_label">நம்பிக்கை அளவு</string>
+    <string name="confidence_placeholder">அறிதல் காத்திருக்கிறது (M2)</string>
+    <string name="replay">மீண்டும் கேட்க</string>
+    <string name="hold_to_speak">பேச அழுத்திப் பிடி</string>
+    <string name="mic_disabled_note">பேச்சிலிருந்து எழுத்து M3-ல் வரும்.</string>
+
+    <!-- Quick Cards screen -->
+    <string name="categories_label">வகைகள்</string>
+    <string name="category_hospital">மருத்துவமனை</string>
+    <string name="category_bank">வங்கி</string>
+    <string name="category_emergency">அவசரம்</string>
+    <string name="category_general">பொது</string>
+    <string name="tap_card_hint">பேச அட்டையைத் தட்டுங்கள்.</string>
+    <string name="card_speaks">பேசுவது: %1$s</string>
+
+    <!-- Speech output -->
+    <string name="tts_tamil_missing">இந்தச் சாதனத்தில் தமிழ்க் குரல் நிறுவப்படவில்லை. அமைப்புகள் → உரையிலிருந்து பேச்சு என்பதில் நிறுவுங்கள்.</string>
+    <string name="tts_unavailable">இந்தச் சாதனத்தில் பேச்சு வெளியீடு இல்லை.</string>
+    <string name="tts_ready">பேச்சு வெளியீடு தயார்.</string>
+    <string name="tts_initialising">பேச்சு வெளியீடு தயாராகிறது…</string>
+</resources>

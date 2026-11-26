@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Saigai</string>
+
+    <!-- Navigation -->
+    <string name="tab_live">Live Bridge</string>
+    <string name="tab_cards">Quick Cards</string>
+
+    <!-- Language toggle -->
+    <string name="language_toggle_label">Output language</string>
+    <string name="lang_tamil">தமிழ்</string>
+    <string name="lang_english">English</string>
+    <string name="lang_both">Both</string>
+
+    <!-- Live Bridge screen -->
+    <string name="captions_placeholder">Point the camera at a sign, or tap a Quick Card.</string>
+    <string name="camera_title">Camera</string>
+    <string name="camera_rationale">The camera stays on this device. No frames are uploaded or stored.</string>
+    <string name="camera_allow">Allow camera</string>
+    <string name="camera_denied">Camera permission is off. Quick Cards still work.</string>
+    <string name="camera_open_settings">Open settings</string>
+    <string name="camera_placeholder_m1">Live sign recognition arrives in M2.</string>
+    <string name="confidence_label">Confidence</string>
+    <string name="confidence_placeholder">Waiting for the recognizer (M2)</string>
+    <string name="replay">Replay</string>
+    <string name="hold_to_speak">Hold to Speak</string>
+    <string name="mic_disabled_note">Speech-to-text arrives in M3.</string>
+
+    <!-- Quick Cards screen -->
+    <string name="categories_label">Categories</string>
+    <string name="category_hospital">Hospital</string>
+    <string name="category_bank">Bank</string>
+    <string name="category_emergency">Emergency</string>
+    <string name="category_general">General</string>
+    <string name="tap_card_hint">Tap a card to speak it.</string>
+    <string name="card_speaks">Speaks: %1$s</string>
+
+    <!-- Speech output -->
+    <string name="tts_tamil_missing">Tamil voice is not installed on this device. Install it in Settings → Text-to-speech.</string>
+    <string name="tts_unavailable">Speech output is unavailable on this device.</string>
+    <string name="tts_ready">Speech output ready.</string>
+    <string name="tts_initialising">Preparing speech output…</string>
+</resources>

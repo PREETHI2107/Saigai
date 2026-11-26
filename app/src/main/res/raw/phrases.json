@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "review_status": "pending-isl-and-tamil-native-review",
+  "review_note": "M0 gate: phrase list, Tamil wording and ISL gesture definitions require sign-off by qualified ISL contributors and a native Tamil reviewer before this catalog is treated as validated translation.",
+  "phrases": [
+    { "id": "need-doctor", "category": "hospital", "ta": "எனக்கு மருத்துவர் வேண்டும்", "en": "I need a doctor" },
+    { "id": "need-nurse", "category": "hospital", "ta": "எனக்கு செவிலியர் வேண்டும்", "en": "I need a nurse" },
+    { "id": "need-medicine", "category": "hospital", "ta": "எனக்கு மருந்து வேண்டும்", "en": "I need medicine" },
+    { "id": "where-pharmacy", "category": "hospital", "ta": "மருந்தகம் எங்கே இருக்கிறது?", "en": "Where is the pharmacy?" },
+    { "id": "have-pain-here", "category": "hospital", "ta": "இங்கே வலி இருக்கிறது", "en": "I have pain here" },
+    { "id": "have-fever", "category": "hospital", "ta": "எனக்கு காய்ச்சல் இருக்கிறது", "en": "I have a fever" },
+    { "id": "not-feeling-well", "category": "hospital", "ta": "எனக்கு உடல்நிலை சரியில்லை", "en": "I am not feeling well" },
+    { "id": "please-write-it", "category": "hospital", "ta": "தயவுசெய்து எழுதிக் கொடுங்கள்", "en": "Please write it down" },
+    { "id": "open-account", "category": "bank", "ta": "நான் கணக்கு தொடங்க வேண்டும்", "en": "I want to open an account" },
+    { "id": "withdraw-money", "category": "bank", "ta": "நான் பணம் எடுக்க வேண்டும்", "en": "I want to withdraw money" },
+    { "id": "deposit-money", "category": "bank", "ta": "நான் பணம் வைக்க வேண்டும்", "en": "I want to deposit money" },
+    { "id": "where-atm", "category": "bank", "ta": "ஏடிஎம் எங்கே இருக்கிறது?", "en": "Where is the ATM?" },
+    { "id": "passbook-not-updated", "category": "bank", "ta": "என் பாஸ்புக் புதுப்பிக்கப்படவில்லை", "en": "My passbook is not updated" },
+    { "id": "call-ambulance", "category": "emergency", "ta": "ஆம்புலன்ஸை அழைக்கவும்", "en": "Call an ambulance" },
+    { "id": "call-police", "category": "emergency", "ta": "காவல்துறையை அழைக்கவும்", "en": "Call the police" },
+    { "id": "help-urgently", "category": "emergency", "ta": "எனக்கு அவசர உதவி வேண்டும்", "en": "I need help urgently" },
+    { "id": "there-is-fire", "category": "emergency", "ta": "இங்கே தீ பிடித்துள்ளது", "en": "There is a fire" },
+    { "id": "please-wait", "category": "general", "ta": "சற்று காத்திருங்கள்", "en": "Please wait a moment" },
+    { "id": "please-repeat", "category": "general", "ta": "தயவுசெய்து மீண்டும் சொல்லுங்கள்", "en": "Please repeat that" },
+    { "id": "thank-you", "category": "general", "ta": "நன்றி", "en": "Thank you" }
+  ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Compose supplies the real theme (see ui/theme/Theme.kt). This platform theme
+      only needs to be a no-action-bar base so the activity starts without a flash
+      of a different surface colour. High-contrast colour lives in Compose.
+    -->
+    <style name="Theme.Saigai" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

@@ -1,0 +1,26 @@
+# Gradle
+.gradle/
+build/
+local.properties
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+
+# Signing material — never commit
+*.jks
+*.keystore
+keystore.properties
+
+# Datasets and recordings (M0 handling rules: local only, never committed)
+datasets/
+recordings/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc

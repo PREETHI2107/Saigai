@@ -41,6 +41,14 @@ object PhraseCatalog {
         val json = context.resources.openRawResource(R.raw.phrases).use { stream ->
             stream.bufferedReader().readText()
         }
+        return parse(json)
+    }
+
+    /**
+     * Catalog parser, deliberately free of Android APIs so it can be unit-tested on
+     * the JVM (see PhraseCatalogTest). [load] is the only Android-aware part.
+     */
+    fun parse(json: String): List<Phrase> {
         val root = JSONObject(json)
         val declaredVersion = root.optInt("version", -1)
         require(declaredVersion == CATALOG_VERSION) {

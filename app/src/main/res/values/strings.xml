@@ -19,9 +19,22 @@
     <string name="camera_allow">Allow camera</string>
     <string name="camera_denied">Camera permission is off. Quick Cards still work.</string>
     <string name="camera_open_settings">Open settings</string>
-    <string name="camera_placeholder_m1">Live sign recognition arrives in M2.</string>
+    <string name="camera_flip">Flip camera</string>
+    <string name="camera_starting">Starting camera\u2026</string>
+    <string name="camera_active">Camera running</string>
+    <string name="camera_unavailable">This device has no usable camera.</string>
+    <string name="camera_failed">The camera could not start.</string>
     <string name="confidence_label">Confidence</string>
-    <string name="confidence_placeholder">Waiting for the recognizer (M2)</string>
+    <string name="confidence_no_hand">no hand</string>
+
+    <!-- Hand tracking (M2 input stage) -->
+    <string name="hand_tracking_title">Hand tracking</string>
+    <string name="hand_none">No hand in frame.</string>
+    <string name="hand_detected">Hands tracked: %1$d</string>
+    <string name="hand_model_missing">Hand model not bundled (assets/hand_landmarker.task).</string>
+    <string name="hand_failed">Hand tracking is unavailable.</string>
+    <string name="hand_idle">Camera is off.</string>
+    <string name="hand_classifier_pending">ISL phrase recognition needs the trained model (M2). Use Quick Cards for now.</string>
     <string name="replay">Replay</string>
     <string name="hold_to_speak">Hold to Speak</string>
     <string name="mic_disabled_note">Speech-to-text arrives in M3.</string>

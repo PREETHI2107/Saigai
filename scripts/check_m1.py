@@ -32,6 +32,17 @@ STRINGS_EN = RES / "values" / "strings.xml"
 STRINGS_TA = RES / "values-ta" / "strings.xml"
 MANIFEST = ROOT / "app" / "src" / "main" / "AndroidManifest.xml"
 KOTLIN_DIR = ROOT / "app" / "src" / "main" / "java"
+MERGED_MANIFESTS = sorted(
+    (ROOT / "app" / "build" / "intermediates" / "merged_manifests").glob("*/*/*/AndroidManifest.xml")
+)
+ANDROID_NS = "{http://schemas.android.com/apk/res/android}"
+TOOLS_NS = "{http://schemas.android.com/tools}"
+BANNED_PERMISSIONS = {
+    "android.permission.INTERNET": "design doc §6 requires on-device only",
+    "android.permission.ACCESS_NETWORK_STATE": "nothing may inspect the network",
+    "com.google.android.gms.permission.AD_ID": "no advertising ID, ever",
+    "android.permission.RECORD_AUDIO": "belongs to M3; no STT code exists yet",
+}
 
 CATEGORIES = {"hospital", "bank", "emergency", "general"}
 TAMIL_RANGE = re.compile(r"[\u0B80-\u0BFF]")
@@ -143,12 +154,7 @@ def check_string_references() -> None:
 
 def check_manifest() -> None:
     text = MANIFEST.read_text(encoding="utf-8")
-    tree = ET.parse(MANIFEST)
-    android = "{http://schemas.android.com/apk/res/android}"
-    permissions = {
-        element.attrib.get(f"{android}name")
-        for element in tree.getroot().findall("uses-permission")
-    }
+    permissions = manifest_permissions(MANIFEST)
     check(
         "android.permission.CAMERA" in permissions,
         "manifest must declare android.permission.CAMERA",
@@ -171,12 +177,52 @@ def check_manifest() -> None:
     )
 
 
+def manifest_permissions(path: Path) -> set[str]:
+    """Permissions a manifest actually grants.
+
+    Elements carrying tools:node="remove" are directives to strip a permission a
+    dependency merged in — they mean the opposite of granted, so they are skipped.
+    """
+    tree = ET.parse(path)
+    return {
+        element.attrib.get(f"{ANDROID_NS}name")
+        for element in tree.getroot().findall("uses-permission")
+        if element.attrib.get(f"{TOOLS_NS}node") != "remove"
+    }
+
+
+def check_merged_manifest() -> None:
+    """Check the *merged* manifest produced by a build.
+
+    The source manifest cannot catch a permission that a dependency merges in.
+    MediaPipe did exactly that: it silently added INTERNET and ACCESS_NETWORK_STATE
+    through Firebase datatransport, and the app kept claiming to be offline while
+    holding a network permission. Only runs when a build output exists.
+    """
+    if not MERGED_MANIFESTS:
+        print("note: no merged manifest yet, run ./build-debug.sh to enable that check")
+        return
+    for manifest in MERGED_MANIFESTS:
+        permissions = manifest_permissions(manifest)
+        variant = manifest.parent.name
+        for permission, reason in BANNED_PERMISSIONS.items():
+            check(
+                permission not in permissions,
+                f"merged manifest ({variant}) declares {permission}: {reason}",
+            )
+        check(
+            "android.permission.CAMERA" in permissions,
+            f"merged manifest ({variant}) must still declare CAMERA",
+        )
+
+
 def main() -> int:
     check_xml()
     check_string_parity()
     phrases = check_catalog()
     check_string_references()
     check_manifest()
+    check_merged_manifest()
 
     print(f"phrase catalog: {len(phrases)} phrases, version 1")
     for category in sorted(CATEGORIES):

@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Camera is required for M2 sign recognition; the app never writes or uploads frames. -->
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <!-- Declared not required so Quick Cards works on tablets and camera-less counters. -->
+    <!--
+      Removed at merge time. MediaPipe's transitive Firebase datatransport libraries
+      declare INTERNET and ACCESS_NETWORK_STATE so they can fetch models from a URL;
+      this app never does that (the model is a bundled asset). Without these two
+      lines the merged manifest silently gains INTERNET and the offline guarantee in
+      design doc §6 stops being enforced by the platform.
+    -->
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        tools:node="remove" />
+
+    <!--
+      Camera must stay optional so Quick Cards works on tablets and camera-less
+      counters. android.hardware.camera is spelled out because the CAMERA
+      permission implies it as required; without this line aapt would mark the
+      app incompatible with camera-less devices.
+    -->
     <uses-feature
         android:name="android.hardware.camera.any"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="false" />
 
     <!--
@@ -18,14 +41,17 @@
 
     <application
         android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Saigai">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true"
-            android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

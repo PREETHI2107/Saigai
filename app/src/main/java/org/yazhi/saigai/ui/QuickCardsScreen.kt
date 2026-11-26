@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -136,7 +136,9 @@ private fun PhraseCard(
         ),
         modifier = Modifier
             .fillMaxWidth()
-            .height(132.dp)
+            // min, not fixed: a three-line Tamil phrase plus its English line needs
+            // more than 132dp at 20sp, and a fixed height clipped the English text.
+            .heightIn(min = 132.dp)
             .clip(shape)
             .border(2.dp, MaterialTheme.colorScheme.primary, shape)
             .semantics { contentDescription = description },

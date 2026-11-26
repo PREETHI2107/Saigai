@@ -19,9 +19,22 @@
     <string name="camera_allow">கேமராவுக்கு அனுமதி அளி</string>
     <string name="camera_denied">கேமரா அனுமதி இல்லை. விரைவு அட்டைகள் இன்னும் வேலை செய்யும்.</string>
     <string name="camera_open_settings">அமைப்புகளைத் திற</string>
-    <string name="camera_placeholder_m1">நேரடி அடையாள அறிதல் M2-ல் வரும்.</string>
+    <string name="camera_flip">கேமராவை மாற்று</string>
+    <string name="camera_starting">கேமரா தொடங்குகிறது\u2026</string>
+    <string name="camera_active">கேமரா இயங்குகிறது</string>
+    <string name="camera_unavailable">இந்தச் சாதனத்தில் பயன்படும் கேமரா இல்லை.</string>
+    <string name="camera_failed">கேமராவைத் தொடங்க முடியவில்லை.</string>
     <string name="confidence_label">நம்பிக்கை அளவு</string>
-    <string name="confidence_placeholder">அறிதல் காத்திருக்கிறது (M2)</string>
+    <string name="confidence_no_hand">கை இல்லை</string>
+
+    <!-- Hand tracking (M2 input stage) -->
+    <string name="hand_tracking_title">கை கண்காணிப்பு</string>
+    <string name="hand_none">சட்டகத்தில் கை இல்லை.</string>
+    <string name="hand_detected">கண்காணிக்கப்படும் கைகள்: %1$d</string>
+    <string name="hand_model_missing">கை மாதிரிக் கோப்பு இணைக்கப்படவில்லை (assets/hand_landmarker.task).</string>
+    <string name="hand_failed">கை கண்காணிப்பு கிடைக்கவில்லை.</string>
+    <string name="hand_idle">கேமரா அணைக்கப்பட்டுள்ளது.</string>
+    <string name="hand_classifier_pending">சைகை மொழிச் சொல் அறிதலுக்குப் பயிற்சி பெற்ற மாதிரி தேவை (M2). இப்போது விரைவு அட்டைகளைப் பயன்படுத்துங்கள்.</string>
     <string name="replay">மீண்டும் கேட்க</string>
     <string name="hold_to_speak">பேச அழுத்திப் பிடி</string>
     <string name="mic_disabled_note">பேச்சிலிருந்து எழுத்து M3-ல் வரும்.</string>

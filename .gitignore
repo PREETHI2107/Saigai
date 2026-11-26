@@ -17,6 +17,10 @@ keystore.properties
 datasets/
 recordings/
 
+# MediaPipe hand-landmark model (7.8 MB). Fetched by scripts/fetch_hand_model.py
+# so a clone does not carry a binary blob; the app reports MODEL_MISSING if absent.
+app/src/main/assets/*.task
+
 # OS noise
 .DS_Store
 Thumbs.db
